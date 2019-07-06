@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using UnityEngine;
+using Zenject;
 
 namespace AABB
 {
     public class Collider: MonoBehaviour
     {
-        [SerializeField] World world;
+        [Inject] World world;
         [SerializeField] Vector2 size = Vector2.one;
 
         private const float inset = 0.01f;

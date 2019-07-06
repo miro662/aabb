@@ -74,7 +74,7 @@ namespace AABB
             }
         }
 
-        public bool overlaps(Bounds other)
+        public bool Overlaps(Bounds other)
         {
             return this.intersection(other).HasValue;
         }

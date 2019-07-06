@@ -19,8 +19,8 @@ namespace AABB
             [SerializeField] public LayerMask upMask;
             [SerializeField] public LayerMask downMask;
 
-            public LayerMask getXMask(float direction) => solidMask | (direction > 0 ? rightMask : leftMask);
-            public LayerMask getYMask(float direction) => solidMask | (direction > 0 ? upMask : downMask);
+            public LayerMask GetXMask(float direction) => solidMask | (direction > 0 ? rightMask : leftMask);
+            public LayerMask GetYMask(float direction) => solidMask | (direction > 0 ? upMask : downMask);
         }
 
         [SerializeField] private CollisionMasks masks;
@@ -33,8 +33,8 @@ namespace AABB
         public Vector2 Move(Vector2 translation)
         {
             return new Vector2(
-            MoveDimension(translation.x, Vector2.right, masks.getXMask(translation.x), v => v.x),
-            MoveDimension(translation.y, Vector2.up, masks.getYMask(translation.y), v => v.y)
+            MoveDimension(translation.x, Vector2.right, masks.GetXMask(translation.x), v => v.x),
+            MoveDimension(translation.y, Vector2.up, masks.GetYMask(translation.y), v => v.y)
             );
         }
         

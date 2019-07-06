@@ -5,15 +5,13 @@ using UnityEngine;
 
 namespace AABB
 {
-    //TODO: make better World, using spatial algorithm (QuadTree)
-    public class World: MonoBehaviour
+    public class World
     {
         private ISpatialCollection<Collider> _colliders;
 
-        private void Awake()
+        public World(ISpatialCollection<Collider> collidersCollection)
         {
-            // TODO: ability to use other spatial colletions
-            _colliders = new SimpleSpatialCollection<Collider>();
+            _colliders = collidersCollection;
         }
 
 
